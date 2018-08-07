@@ -8,6 +8,6 @@ Executar o docker-compose para subir o ambiente. Os arquivos Dockerfile-nginx e 
 ...
 
 This is a college project that I've been working on lately (still in progress atm). 
-The environment it's basicaly a few containers running a wordpress webpage through nginx.
+The environment it's basically a few containers running a wordpress web-page through nginx.
 In order to build it up just run the docker-compose and make sure that all files are on the same directory.
 
