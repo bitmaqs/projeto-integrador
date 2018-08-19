@@ -4,7 +4,7 @@ services:
    db:
      image: mysql:latest
      volumes:
-       - ./db:/var/lib/mysql
+       - /var/lib/mysql:/var/lib/mysql
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: senhaforte
@@ -20,7 +20,7 @@ services:
      image: wordpress:latest
      restart: always
      volumes:
-       - ./wordpress:/var/www/html/
+       - /var/www/html:/var/www/html/
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress
@@ -43,6 +43,8 @@ services:
        - "80:80"
      networks:
        - wp-net
+     deploy:
+      mode: global
 
 networks:
     wp-net:    
