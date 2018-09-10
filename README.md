@@ -17,6 +17,7 @@ A primeira versão deste ambiente funciona localmente. O nginx além de servidor
 3. Cenário com Swarm na AWS
 
 A ideia original continua a mesma, porém os testes foram realizados diretamente na nuvem (amazon) e utilizando clusters com o swarm-mode. O container de banco de dados roda no exclusivamente no manager, o nginx em modo global (um em cada instância). O wordpress não é mais configurado em três containers individuais, mas utiliza a função de replicar o container. O docker-compose foi configurado para criar 3 réplicas, mas este numero pode ser facilmente alterado conforme necessário.
+
 3.1. Subindo o ambiente
 - Arquivos: docker-compose-swarm.yaml, aws-swarm-boot.sh
 - Criar instâncias na amazon (um manager e alguns workers)
