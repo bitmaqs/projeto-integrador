@@ -7,6 +7,7 @@ O projeto tem como objetivo principal prover uma página wordpress utilizando co
 2. Cenário Inicial 
 
 A primeira versão deste ambiente funciona localmente. O nginx além de servidor web, age como um load balancer simples. Existem três containers para o wordpress que compartilham o mesmo diretório do host. As configurações do banco de dados são feitas diretamente pelo docker compose. 
+
 2.1. Subindo o ambiente
 - Arquivos necessários: Dockerfile-nginx, docker-compose.yaml, nginx.conf.
 - Os arquivos devem estar no mesmo diretório.
