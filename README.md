@@ -28,6 +28,6 @@ A ideia original continua a mesma, porém os testes foram realizados diretamente
 Obs: É necessário abrir algumas portas na política de segurança, como a porta para http e portas do swarm.
 
 Próximas etapas do projeto: 
-Subir o ambiente com kubernetes (em andamento) 
-Adicionar containers de monitoramento.
+- Subir o ambiente com kubernetes (em andamento) 
+- Adicionar containers de monitoramento.
 
