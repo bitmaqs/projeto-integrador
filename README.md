@@ -39,12 +39,12 @@ Um ponto interessante, é que uma vez configurado utilizando o kops (Kubernetes 
 
 4.1 Subindo o Ambiente 
 
-Configurar o AWS CLI com as devidas credenciais;
-Configurar o Kops ( 1 master, 2 nodes, modo gossip) ;
-Aplicar os PVCs (mysql-volumeclaim.yaml e wordpress-volumeclaim.yaml);
-Criar o Deployment do banco de dados (mysql-deploy.yaml);
-Criar o Serviço do banco de dados (mysql-service.yaml) ;
-Criar o Deployment do wordpress (wordpress-deploy.yaml);
-Criar o Serviço do wordpress (wordpress-service.yaml) .
+- Configurar o AWS CLI com as devidas credenciais;
+- Configurar o Kops ( 1 master, 2 nodes, modo gossip) ;
+- Aplicar os PVCs (mysql-volumeclaim.yaml e wordpress-volumeclaim.yaml);
+- Criar o Deployment do banco de dados (mysql-deploy.yaml);
+- Criar o Serviço do banco de dados (mysql-service.yaml) ;
+- Criar o Deployment do wordpress (wordpress-deploy.yaml);
+- Criar o Serviço do wordpress (wordpress-service.yaml).
 
 
