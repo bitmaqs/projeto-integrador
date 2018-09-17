@@ -28,7 +28,23 @@ A ideia original continua a mesma, porém os testes foram realizados diretamente
 - No browser, entrar com o endereço provido pelo dns da amazon. Tanto o endereço do manager quanto dos workers devem iniciar o wordpress. 
 Obs: É necessário abrir algumas portas na política de segurança, como a porta para http e portas do swarm.
 
-Próximas etapas do projeto: 
-- Subir o ambiente com kubernetes (em andamento) 
-- Adicionar containers de monitoramento.
+
+4. Cenário em Kubernetes
+
+Assim como no swarm-mode, o ambiente está em um cluster na amazon web services. O diferencial é que desta vez foi configurado com kubernetes, deixando-o mais robusto, complexo e autônomo.
+O cenário consiste em um servidor master e dois nodes. Cada um possui alguns PODs com o container do Wordpress e um POD com o container mysql. O nginx não é mais utilizado pois foi configurado um serviço de load balancing do próprio kubernetes. Todos os arquivos são salvos em volumes persistentes, assim evitando que o conteúdo seja perdido com a exclusão de algum POD.
+
+
+Um ponto interessante, é que uma vez configurado utilizando o kops (Kubernetes Operations, serve para gerenciar o cluster) e possuindo as permissões do AWS CLI, todo o ambiente fica automatizado. As especificações ficam salvas em um bucket S3, é capaz de criar e apagar as instâncias EC2, são automaticamente configurados os serviços de load balancing, grupos de auto-scaling, políticas de segurança, etc. Em outras palavras, se um servidor for desativado ou se um POD for deletado, os mesmos serão repostos automaticamente. 
+
+4.1 Subindo o Ambiente 
+
+Configurar o AWS CLI com as devidas credenciais;
+Configurar o Kops ( 1 master, 2 nodes, modo gossip) ;
+Aplicar os PVCs (mysql-volumeclaim.yaml e wordpress-volumeclaim.yaml);
+Criar o Deployment do banco de dados (mysql-deploy.yaml);
+Criar o Serviço do banco de dados (mysql-service.yaml) ;
+Criar o Deployment do wordpress (wordpress-deploy.yaml);
+Criar o Serviço do wordpress (wordpress-service.yaml) .
+
 
